@@ -105,33 +105,20 @@ if(list == null || list.size() == 0){
 		%>
 		<tr>
 			<th><%=i + 1 %></th>
-			
-			<%
-				if(dto.getDel() == 0) {
-					%>
-				<td>
+			<td>
 				<%=arrow(dto.getDepth()) %>
 				<a href="bbsdetail.jsp?seq=<%=dto.getSeq() %>">
 					<%=dto.getTitle() %>
 				</a>
 			</td>
-			<%
-			} else if(dto.getDel() == 1) {
-			%>
-			<td align="center">
-				<font color="#ff0000"> ***이 글은 작성자에 의해서 삭제되었습니다 ***</font>
-			</td>
-			<%
-		}
-		%>
-			<td><%=dto.getReadcount() %></td>
+			<%-- <td><%=dto.getSeq() %></td> --%>
+			<td><%=dto.getRef() %>-<%=dto.getStep() %>-<%=dto.getDepth() %></td>
 			<td><%=dto.getId() %></td>			
 		</tr>
 		<%
 	}
-	%>
-
-
+}
+%>
 
 </tbody>
 </table>
