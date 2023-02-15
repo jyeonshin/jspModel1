@@ -7,14 +7,15 @@ create table member(
 	name varchar(50) not null,
 	email varchar(50) unique,
 	auth int
-); 
+);
 
-ALTER TABLE member CONVERT TO CHARACTER SET UTF8;
-
-select id
+select id 
 from member
-where id = 'abc';
+where id='abc';
 
 select count(*)
 from member
 where id='abc';
+
+select * from member;
+
