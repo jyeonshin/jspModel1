@@ -2,38 +2,38 @@
 <%@page import="dao.MemberDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+    
 <%
-	// db에 넣기 전에 무조건 한글 인코딩 해야 한다
 	request.setCharacterEncoding("utf-8");
-	
+
 	String id = request.getParameter("id");
 	String pwd = request.getParameter("pwd");
 	String name = request.getParameter("name");
 	String email = request.getParameter("email");
-
+	
 	// back-end
 	MemberDao dao = MemberDao.getInstance();
 	
 	MemberDto dto = new MemberDto(id, pwd, name, email, 0);
 	boolean isS = dao.addMember(dto);
-	if(isS) {
-		%>
+	if(isS){
+		%>    
 			<script type="text/javascript">
-				alert("성공적으로 가입되었습니다");
-				location.href = "login.jsp";
+			alert("성공적으로 가입되었습니다");
+			location.href = "login.jsp";
 			</script>
 		<%
-	} else {
+	}else{		
 		%>
 			<script type="text/javascript">
-				alert("다시 가입해주세요");
-				location.href = "regi.jsp";
+			alert("다시 가입해 주십시오");
+			location.href = "regi.jsp";
 			</script>
 		<%
 	}
-	%>
-	
-%>      
-    
+%>
+
+
+
+
 

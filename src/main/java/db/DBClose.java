@@ -20,7 +20,6 @@ public class DBClose {
 			}
 		} catch (SQLException e) {				
 			e.printStackTrace();
-		}			
+		}
 	}
 }
-

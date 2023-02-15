@@ -8,12 +8,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
 <style type="text/css">
-	.center {
-		margin: auto;
-		width: 60%;
-		border: 3px solid #ff0000;
-		padding: 10px;
-	}
+.center{
+	margin: auto;
+	width: 60%;
+	border: 3px solid #ff0000;
+	padding: 10px;
+}
 </style>
 
 </head>
@@ -23,6 +23,7 @@
 <p>환영합니다</p>
 
 <div class="center">
+
 <form action="regiAf.jsp" method="post">
 
 <table border="1">
@@ -57,9 +58,7 @@
 		<input type="submit" value="회원가입">
 	</td>
 </tr>
-
 </table>
-
 </form>
 
 </div>
@@ -67,37 +66,39 @@
 <script type="text/javascript">
 $(document).ready(function() {
 	
-	$('#idChkBtn').click(function() {
+	$("#idChkBtn").click(function() {
 		
 		// id의 빈칸을 조사!
 		
 		$.ajax({
 			type:"post",
 			url:"idcheck.jsp",
-			data:{ id:$("#id").val() },
-			success:function(msg) {
+			data:{ "id":$("#id").val() },
+			success:function(msg){
 				// alert('success');
 				// alert(msg.trim());
 				
-				if(msg.trim() == "YES") {
+				if(msg.trim() == "YES"){
 					$("#idcheck").css("color", "#0000ff");
 					$("#idcheck").text("사용할 수 있는 아이디입니다");
-				}else {
+				}else{
 					$("#idcheck").css("color", "#ff0000");
 					$("#idcheck").text("사용중인 아이디입니다");
 					$("#id").val("");
 				}
-			}, 
-			error:function() {
+			},
+			error:function(){
 				alert('error');
 			}
 		});
 	});
 });
-
-
 </script>
-
 
 </body>
 </html>
+
+
+
+
+
